@@ -1,0 +1,49 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+ 
+  resources:
+    chain:
+      compressed: true
+      cache: true
+
+  datasource:
+    url: jdbc:log4jdbc:h2:file:./h2/local
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    #url: jdbc:h2:file:./h2/TEST
+    #driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  thymeleaf:
+    suffix: .html
+    cache: false
+
+mybatis:
+  mapper-locations:
+  - classpath:/mapper/**/*.xml
+
+server:
+  port: 8000
+  servlet:
+    session:
+      cookie:
+        name: BASE_SESSION_ID
+    encoding:
+      charset: UTF-8
+  compression:
+    enabled: false
+  error:
+    whitelabel:
+      enabled: false
+
+logging:
+  config: classpath:logback-spring.xml
