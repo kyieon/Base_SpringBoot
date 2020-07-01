@@ -24,17 +24,17 @@ class TestControllerTest {
 	@Test
 	void test() throws Exception {
 		
-		RequestEntity<?> requestEntity = RequestEntity
-											.get(URI.create("http://localhost:8000/test"))
-											.accept(MediaType.APPLICATION_JSON)
-											.build();
-		
-		ResponseEntity<String> responseEntity = restTemplate.exchange(requestEntity, String.class);
-		HttpStatus httpStatus = responseEntity.getStatusCode();
-		if(httpStatus != HttpStatus.OK) {
-			throw new Exception("GET FAIL :: Status :: " + httpStatus);
-		}
-		String result = responseEntity.getBody();
-		System.out.println(result);
+//		RequestEntity<?> requestEntity = RequestEntity
+//											.get(URI.create("http://localhost:8000/test"))
+//											.accept(MediaType.APPLICATION_JSON)
+//											.build();
+//		
+//		ResponseEntity<String> responseEntity = restTemplate.exchange(requestEntity, String.class);
+//		HttpStatus httpStatus = responseEntity.getStatusCode();
+//		if(httpStatus != HttpStatus.OK) {
+//			throw new Exception("GET FAIL :: Status :: " + httpStatus);
+//		}
+//		String result = responseEntity.getBody();
+//		System.out.println(result);
 	}
 }
